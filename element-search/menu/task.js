@@ -7,6 +7,7 @@ menu.forEach((element) => {
   } else {
     element.onclick = function () {
       menuSub.classList.toggle("menu_active");
+      return false;
     }
   }
 })
