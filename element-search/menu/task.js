@@ -1,14 +1,12 @@
-const menu = [...document.querySelectorAll(".menu__item")];
-//const menuSub = document.querySelectorall(".menu_sub");
+const menu = [...document.querySelectorAll(".menu__link")];
 menu.forEach((element) => {
   let menuSub = element.closest(".menu__item").querySelector(".menu_sub");
   if (!menuSub) {
     return;
-  } else {
-    element.onclick = function () {
-      menuSub.classList.toggle("menu_active");
-      return false;
-    }
+  }
+  element.onclick = function () {
+    menuSub.classList.toggle("menu_active");
+    return false;
   }
 })
 //for (let i = 0; i < menu.length; i++) {
