@@ -5,8 +5,9 @@ btnMenu.addEventListener("click", () => {
   menu.classList.toggle("dropdown__list_active");
   if (menu.classList.contains("dropdown__list_active")) {
     nameMenu.forEach((e) => {
-      e.addEventListener("click", () => {
+      e.addEventListener("click", (event) => {
       btnMenu.textContent = e.textContent;
+      event.preventDefault();
       })
     })
   }

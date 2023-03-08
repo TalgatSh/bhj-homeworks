@@ -17,9 +17,12 @@ class Game {
   }
 
   registerEvents() {
-    document.addEventListener("keydown", (event) => {
-      if (event.key == this.currentSymbol) {
+    const current = String.fromCharCode(this.currentSymbol);
+    document.addEventListener("keyup", (event) => {
+      if (String.fromCharCode(event.key) == current) {
         this.success();
+      } else if (String.fromCharCode(event.key) != current) {
+        return this.fail();
       }
     })
     
