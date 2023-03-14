@@ -16,13 +16,12 @@ class Game {
     this.lossElement.textContent = 0;
   }
 
-  registerEvents() {
-    const current = String.fromCharCode(this.currentSymbol);
+  registerEvents() {    
     document.addEventListener("keyup", (event) => {
-      if (String.fromCharCode(event.key) == current) {
+      if (event.key == this.currentSymbol.textContent) {
         this.success();
-      } else if (String.fromCharCode(event.key) != current) {
-        return this.fail();
+      } else {
+        this.fail();
       }
     })
     
