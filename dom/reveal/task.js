@@ -14,7 +14,7 @@ const reveal = Array.from(document.querySelectorAll(".reveal"));
 function revealActive() {
   reveal.forEach((r) => {
     const { top, bottom } = r.getBoundingClientRect();
-    if (top < window.innerHeight && bottom > 0) {
+    if (top > 0 && bottom < window.innerHeight) {
       r.classList.add("reveal_active");
     } else {
       r.classList.remove("reveal_active");
@@ -23,4 +23,3 @@ function revealActive() {
 }
 
 document.addEventListener("scroll", revealActive(reveal));
-
