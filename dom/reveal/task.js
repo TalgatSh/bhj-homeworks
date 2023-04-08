@@ -12,15 +12,13 @@ const reveal = Array.from(document.querySelectorAll(".reveal"));
 
 //document.addEventListener("scroll", () => revealActive(reveal));
 function revealActive() {
-    reveal.forEach((r) => {
-      const { top, bottom } = r.getBoundingClientRect();
-      if (bottom < 0) {
-        reveal.forEach((t) => t.classList.toggle("reveal_active"));
-      }
-      if (top > window.innerHeight) {
-        reveal.forEach((t) => t.classList.toggle("reveal_active"));
-      }
-      reveal.classList.toggle("reveal_active");
+  reveal.forEach((r) => {
+    const { top, bottom } = r.getBoundingClientRect();
+    if (top < window.innerHeight && bottom > 0) {
+      r.classList.add("reveal_active");
+    } else {
+      r.classList.remove("reveal_active");
+    }
   })
 }
 

@@ -1,5 +1,5 @@
-var rotator = document.querySelectorAll(".rotator__case");
-var currentRotator = 0;
+let rotator = document.querySelectorAll(".rotator__case");
+let currentRotator = 0;
 setInterval(nextRotator, 1000)
 
 function nextRotator() {
