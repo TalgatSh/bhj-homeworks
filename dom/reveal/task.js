@@ -13,8 +13,8 @@ const reveal = Array.from(document.querySelectorAll(".reveal"));
 //document.addEventListener("scroll", () => revealActive(reveal));
 function revealActive() {
   reveal.forEach((r) => {
-    const { top, bottom } = r.getBoundingClientRect();
-    if (top > 0 && bottom < window.innerHeight) {
+    const { top } = r.getBoundingClientRect();
+    if (top < window.innerHeight && top > 0) {
       r.classList.add("reveal_active");
     } else {
       r.classList.remove("reveal_active");
@@ -22,4 +22,6 @@ function revealActive() {
   })
 }
 
-document.addEventListener("scroll", revealActive(reveal));
+document.addEventListener("scroll", function () {
+  revealActive();
+}, false);
