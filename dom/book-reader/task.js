@@ -10,7 +10,7 @@ parent.addEventListener("click", (event) => {
   let control = event.target;
   let size = control.dataset.size || '';
   event.preventDefault();
-  if (control.classList.contains("font-size")) {
+  if (control.classList.contains("font-size") && book.classList.contains("book")) {
     for(let i = 0; i < buttons.length; i++) {
       buttons[i].classList.remove("font-size_active");
       book.classList.remove(`book_fs-${size}`);
