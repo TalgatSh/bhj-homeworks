@@ -68,6 +68,9 @@ class Autocomplete {
   }
 
   getMatches( text ) {
+    text = this.input.value;
+    let list = document.querySelectorAll('.autocomplete__input option')
+    
     /*
       TODO: этот метод нужно дописать
       text - фраза, которую вводят в поле поиска
