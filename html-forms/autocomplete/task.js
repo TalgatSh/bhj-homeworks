@@ -68,8 +68,12 @@ class Autocomplete {
   }
 
   getMatches( text ) {
-    text = this.input.value;
-    let list = document.querySelectorAll('.autocomplete__input option')
+    this.text = [];
+    for (let i = 0; i < this.input.length; i++) {
+      if (text[i] == this.input[i]) {
+        this.text.push(i)
+      }
+    }
     
     /*
       TODO: этот метод нужно дописать
@@ -87,7 +91,7 @@ class Autocomplete {
     return [
       {
         text: 'Чубакка',
-        value: '1'
+        value: 'value'
       }
     ];
   }
