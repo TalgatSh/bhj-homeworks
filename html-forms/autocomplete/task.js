@@ -68,12 +68,14 @@ class Autocomplete {
   }
 
   getMatches( text ) {
-    this.text = [];
+    let matches = [];
     for (let i = 0; i < this.input.length; i++) {
-      if (text[i] == this.input[i]) {
-        this.text.push(i)
+      if (this.input[i].text.toLowerCase().includes(text)) {
+        let match = this.input[i];
+        matches.push(match);
       }
     }
+    return matches;
     
     /*
       TODO: этот метод нужно дописать
