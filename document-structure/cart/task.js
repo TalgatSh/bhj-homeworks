@@ -4,13 +4,17 @@ const minus = [...document.querySelectorAll('.product__quantity-control_dec')];
 const cartbtn = [...document.querySelectorAll('.product__add')];
 const controls = [...document.querySelectorAll('.product__quantity-control')];
 
+
+
 controls.forEach((e) => {
   e.addEventListener('click', (event) => {
     let target = event.target;
+    value.forEach((v) => {
+      let maxCount = parseFloat(v.textContent);
+      if (target.classList.contains('product__quantity-control_inc')) {
+        v.textContent = maxCount + 1;
+      }
+    })
     let maxCount = parseFloat(value.textContent);
-    if (target.classList.contains('product__quantity-control_inc')) {
-      value.textContent = maxCount + 1;
-    }
-    
   })
 })
