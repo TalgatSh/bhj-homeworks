@@ -22,10 +22,15 @@ function newElements(value) {
     <a href="#" class="task__remove">&times;</a>
   `
   task.appendChild(div);
-  let remove = document.querySelector('.task__remove');
-  remove.addEventListener('click', (e) => {
-    task.removeChild(div);
+  let remove = [...document.querySelectorAll('.task__remove')];
+  remove.forEach((e) => {
+    e.addEventListener('click', close);
   })
+  
+}
+close = function(event) {
+  let target = event.target;
+  target.parentNode.remove()
 }
 
 
